@@ -28,7 +28,7 @@ public class WhatsappRepository {
     }
 
     public String createUser(String name, String mobile) throws Exception{
-        if(userMobile.contains(mobile)) throw new Exception("User Already Exists");
+        if(userMobile.contains(mobile)) throw new Exception("User already exists");
 
         User user = new User(name, mobile);
         userMobile.add(mobile);
@@ -44,7 +44,7 @@ public class WhatsappRepository {
         else {
             customGroupCount++;
             int usersCount = users.size();
-            Group group = new Group("Group "+usersCount,  usersCount);
+            Group group = new Group("Group "+customGroupCount, usersCount);
             groupUserMap.put(group, users);
             groupMessageMap.put(group, new ArrayList<>());
             User admin = users.get(0);          //first user is admin
